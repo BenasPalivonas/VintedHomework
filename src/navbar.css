@@ -1,0 +1,65 @@
+
+.navbar{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  overflow: auto;
+  display:flex;
+  top:0;
+  width:100%;
+  background-color: #AED9E0;
+  font-size:20px;
+  height:50px;
+  align-items: center;
+}
+.navbar img{
+    background:none;
+    border:none;
+}
+.navbar li{
+align-items: center;
+background-color: #AED9E0;
+display: inline;
+
+}
+ul li input{
+    background: #D2EAEE;
+    border:2px solid #504e4e;
+    margin-right:10px;
+    border-radius: 10px;
+    height:40 px;
+    outline:none;
+}
+ul li button{
+border:0.16em solid #FFFFFF;
+background: #c0c0aa;
+background: linear-gradient(to right, #c0c0aa, #06949e);
+height:35px;
+width:90px;
+color:black;
+border-radius: 15px;
+box-sizing: border-box;
+text-decoration:none;
+text-transform:uppercase;
+font-family:'Roboto',sans-serif;
+font-weight:400;
+color:#FFFFFF;
+text-align:center;
+transition: all 0.15s;
+outline:none;
+}
+ul li button:hover{
+cursor: pointer;
+color:#DDDDDD;
+border-color:#DDDDDD;
+}
+.favorite{
+    margin-right: calc(50vw - 280px);
+    margin-left: 30px;
+    cursor: pointer;
+    border:2px solid #AED9E0;
+}
+.favorite:hover{
+border-bottom:2px solid #1c2cb9;
+}

@@ -1,25 +1,22 @@
-import logo from './logo.svg';
+import Items from './Items.js';
+import React, { useState } from 'react';
+import Navbar from './Navbar.js';
 import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+import DatePicker from './DatePicker';
+const App = () => {
+    const [tag, setTag] = useState("");
+    const [date, setDate] = useState("today");
+    const onChange = (text) => {
+        setTag(text);
+    }
+    const onClickDate = (event) => {
+        setDate(event.target.value)
+    }
+    return (<div>
+        <Navbar onChange={onChange} />
+        <DatePicker onClickDate={onClickDate} />
+        <Items tag={tag} date={date} />
     </div>
-  );
+    );
 }
-
 export default App;

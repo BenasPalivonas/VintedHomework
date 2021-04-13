@@ -1,0 +1,19 @@
+.grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin:50px;
+    gap: 50px;
+    text-align: center;
+}
+img{
+    margin:auto;
+    display:block;
+    border-radius: 25px;
+border:1px solid white;
+
+}
+.container{
+    display:flex;
+    height:400px;
+    width:400px;
+}
