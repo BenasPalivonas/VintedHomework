@@ -29,11 +29,7 @@ const Navbar = ({ onChange, favorites, deleteFavorite, addFavorites }) => {
             : ''}
         <ul className="navbar">
             <li className='favorite' onClick={() => setMenuOpen(!menuOpen)} >Favourites <img src={favorite} alt="failed to load" /></li>
-            <li style={{ marginRight: 'calc(50vw - 400px)' }}><input style={{
-                height: '30px',
-                width: '200px',
-                borderRadius: '10px'
-            }} onChange={(event) => {
+            <li ><input onChange={(event) => {
                 setInput(event.target.value);
             }} type="text" placeholder="Search for tags" value={input} /><button onClick={() => onChange(input)}>Search</button> <button onClick={() => {
                 onChange("");

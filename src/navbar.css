@@ -28,18 +28,22 @@ display: inline;
 ul li input{
     background: #c0c0c0;
     border:2px solid #504e4e;
+    margin-left: 10px;
     margin-right:10px;
     border-radius: 10px;
-    height:40 px;
+    height:30px;
+    width:100px;
     outline:none;
+
 }
 ul li button{
 border:2PX solid #725140;
 background: #725140;
 height:35px;
-width:80px;
+width:60px;
 color:black;
 border-radius: 15px;
+font-size: 10px;
 box-sizing: border-box;
 text-decoration:none;
 text-transform:uppercase;
@@ -55,8 +59,6 @@ color:#DDDDDD;
 border-color:#DDDDDD;
 }
 .favorite{
-    margin-right: calc(50vw - 280px);
-    margin-left: 30px;
     cursor: pointer;
 }
 .favorite img{
@@ -66,10 +68,53 @@ border-color:#DDDDDD;
 border-bottom:5px solid #a5680c;
 }
 
+@media only screen and (min-width: 400px){
+ul li button{
+border:2PX solid #725140;
+background: #725140;
+height:35px;
+width:80px;
+color:black;
+border-radius: 15px;
+box-sizing: border-box;
+text-decoration:none;
+text-transform:uppercase;
+font-weight:600;
+color:#FFFFFF;
+text-align:center;
+transition: all 0.15s;
+outline:none;
+font-size: 15px;
+}
+ul li input{
+     background: #c0c0c0;
+    border:2px solid #504e4e;
+    margin-left: 10px;
+    margin-right:10px;
+    border-radius: 10px;
+    height:30px;
+    width:150px;
+    outline:none;
+}
+}
+
 @media only screen and (min-width: 600px){
-.ul li button{
+ul li button{
 height:35px;
 width:90px;
-font-size: 20px;
+font-size: 15px;
+}
+ul li input{
+    background: #c0c0c0;
+    border:2px solid #504e4e;
+    margin-right:10px;
+    border-radius: 10px;
+    height:40px;
+    outline:none;
+    height: 30px;
+    width: 200px;
+}
+.favorite{
+    margin-right: calc(50vw - 280px);
 }
 }

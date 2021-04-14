@@ -18,8 +18,8 @@ const FavoriteDropDownMenu = ({ favorites, deleteFavorite, modalState, addFavori
         {showModal ? <Modal favorites={favorites} deleteFavorite={deleteFavorite} addFavorites={addFavorites} item={modalItem} closeModal={closeModal} /> : ""}
         <div className="favoriteMenu">
             {favorites.map((item) => {
-                return <div onClick={() => openModal(item)}>title: {item.title} <br /> author: {item.ownername} <br /> <img src={`https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_s.jpg`} alt="Failed to load" />
-                    <img src={deletePng} onClick={(e) => {
+                return <div style={{ marginLeft: '5px' }} onClick={() => openModal(item)}> Title: {item.title} <br /> Author: {item.ownername} <br /> <img src={`https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_s.jpg`} alt="Failed to load" />
+                    <img style={{ borderBottom: 'none' }} src={deletePng} onClick={(e) => {
                         e.stopPropagation();
                         deleteFavorite(item)
                     }} alt="" />
