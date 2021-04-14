@@ -1,6 +1,6 @@
 List of features i added:
 On click picture open modal,
-Drop down menu of favorite photos,
+Drop down menu with favorite photos,
 Search for tags,
 Search by time,
 Delete from favorites,
