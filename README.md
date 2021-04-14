@@ -1,5 +1,5 @@
 List of features i added:
-On click picture open modal,
+On click picture open picture modal,
 Drop down menu with favorite photos,
 Search for tags,
 Search by time,
