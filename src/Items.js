@@ -1,9 +1,12 @@
 import React, { useEffect, useState, useRef, useCallback } from 'react';
 import './items.css'
 import UseSearchPhotos from './UseSearchPhotos';
-const Items = ({ tag, date }) => {
-    // const [response, setResponse] = useState({ data: { photos: { photo: [] } } });
+import Card from './Card';
+import Modal from './Modal';
+const Items = ({ tag, date, addFavorites, deleteFavorite, favorites }) => {
     const [pageNumber, setPageNumber] = useState(1);
+    const [showModal, setShowModal] = useState(false);
+    const [modalItem, setModalItem] = useState({})
     var time = new Date();
     time.setDate(time.getDate() - date);
     var ts = Math.round(time.getTime() / 1000);
@@ -27,15 +30,29 @@ const Items = ({ tag, date }) => {
 
     useEffect(() => {
         resetPictures();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [tag, date])
+    const openModal = (item) => {
+        setShowModal(true);
+        setModalItem(item);
+    }
+    const closeModal = () => {
+        setShowModal(false);
+    }
     return (
-        <div className="grid">
-            { pictures.map((item, index) => {
-                if (pictures.length === index + 1) {
-                    return <div ref={lastBookElementRef} className="container"><img src={`https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_w.jpg`} /></div>
-                }
-                return <div className="container"><img src={`https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_w.jpg`} /></div>
-            })}
+        <div>
+            {showModal ? <Modal favorites={favorites} deleteFavorite={deleteFavorite} addFavorites={addFavorites} item={modalItem} closeModal={closeModal} /> : ''}
+            <div className="grid">
+                {pictures.map((item, index) => {
+                    if (pictures.length === index + 1) {
+                        return <div style={{ width: '400px', height: '400px' }} onClick={() => openModal(item)} ref={lastBookElementRef} ><Card addFavorites={addFavorites} item={item} />
+                        </div>
+                    }
+                    else
+                        return <div style={{ width: '400px', height: '400px' }} onClick={() => openModal(item)}><Card addFavorites={addFavorites} item={item} /></div>
+
+                })}
+            </div>
         </div>
     );
 }

@@ -1,11 +1,34 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import './navbar.css'
 import favorite from './favorite.png'
-const Navbar = ({ onChange }) => {
+import FavoriteDropDownMenu from './FavoriteDropDownMenu'
+const Navbar = ({ onChange, favorites, deleteFavorite, addFavorites }) => {
     const [input, setInput] = useState('');
-    return (
+    const [menuOpen, setMenuOpen] = useState(false);
+    const [modalOpen, setModalOpen] = useState(false);
+    const dropDownRef = useRef(null);
+    useEffect(() => {
+        const pageClickEvent = (e) => {
+            if (dropDownRef.current !== null && !dropDownRef.current.contains(e.target) && modalOpen == false) {
+                setMenuOpen(!menuOpen);
+            }
+        }
+        if (menuOpen) {
+            window.addEventListener('click', pageClickEvent);
+        }
+        return () => {
+            window.removeEventListener('click', pageClickEvent);
+        }
+    }, [menuOpen, modalOpen])
+    const modalState = (state) => {
+        setModalOpen(state);
+    }
+
+    return (<div>
+        {menuOpen ? <div ref={dropDownRef}> <FavoriteDropDownMenu modalState={modalState} favorites={favorites} deleteFavorite={deleteFavorite} addFavorites={addFavorites} /> </div>
+            : ''}
         <ul className="navbar">
-            <li className='favorite' >Favorites <img src={favorite} /></li>
+            <li className='favorite' onClick={() => setMenuOpen(!menuOpen)} >Favourites <img src={favorite} alt="failed to load" /></li>
             <li style={{ marginRight: 'calc(50vw - 400px)' }}><input style={{
                 height: '30px',
                 width: '200px',
@@ -16,8 +39,8 @@ const Navbar = ({ onChange }) => {
                 onChange("");
                 setInput("");
             }}>Clear</button></li>
-            < li > Profile</li>
         </ul>
+    </div>
     )
 }
 export default Navbar;

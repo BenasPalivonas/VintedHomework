@@ -1,0 +1,31 @@
+import React, { useState } from 'react';
+import './FavoriteDropDownMenu.css';
+import deletePng from './delete.png';
+import Modal from './Modal.js';
+const FavoriteDropDownMenu = ({ favorites, deleteFavorite, modalState, addFavorites }) => {
+    const [modalItem, setModalItem] = useState();
+    const [showModal, setShowModal] = useState(false);
+    const openModal = (item) => {
+        modalState(true);
+        setShowModal(true);
+        setModalItem(item);
+    }
+    const closeModal = () => {
+        modalState(false);
+        setShowModal(false);
+    }
+    return (<div>
+        {showModal ? <Modal favorites={favorites} deleteFavorite={deleteFavorite} addFavorites={addFavorites} item={modalItem} closeModal={closeModal} /> : ""}
+        <div className="favoriteMenu">
+            {favorites.map((item) => {
+                return <div onClick={() => openModal(item)}>title: {item.title} <br /> author: {item.ownername} <br /> <img src={`https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_s.jpg`} alt="Failed to load" />
+                    <img src={deletePng} onClick={(e) => {
+                        e.stopPropagation();
+                        deleteFavorite(item)
+                    }} alt="" />
+                </div>
+
+            })}
+        </div></div>)
+}
+export default FavoriteDropDownMenu;

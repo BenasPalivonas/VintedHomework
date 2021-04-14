@@ -1,21 +1,24 @@
 .parentDiv{
 display: 'inline-block';
 margin-top: 80px;
-width: 100%;
-margin-left: calc(50vw - 180px);
+margin-bottom: 30px;
+margin-left: calc(50vw - 150px);
 }
 .button{
-width:100px;
-height:30px;
-background-color:#333333;
+vertical-align:top;
+width:90px;
+height:50px;
+background-color:#725140;
 display:inline-block;
-border:0.1em solid #FFFFFF;
-margin:0 0.3em 0.3em 0;
-border-radius:0.12em;
+border:0;
+margin-top: 30px;
+margin-right:5px;
+border-radius:15px;
 box-sizing: border-box;
 text-decoration:none;
 font-family:'Roboto',sans-serif;
-font-weight:300;
+font-weight:600;
+font-size: 13px;
 color:#FFFFFF;
 text-align:center;
 transition: all 0.2s;
@@ -25,3 +28,18 @@ cursor: pointer;
 color:#000000;
 background-color:#FFFFFF;
 }
+
+@media only screen and (min-width: 600px){
+    .button{
+width:150px;
+height:60px;
+font-size: 20px;
+
+}
+    .parentDiv{
+margin-top: 50px;
+margin-bottom: 30px;
+margin-left: calc(50vw - 245px);
+}
+}
+

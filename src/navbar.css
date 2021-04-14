@@ -7,11 +7,13 @@
   overflow: auto;
   display:flex;
   top:0;
-  width:100%;
-  background-color: #AED9E0;
+  width:100vw;
+  background-color: #4F3933;
   font-size:20px;
   height:50px;
   align-items: center;
+  color:white;
+  z-index: 100;
 }
 .navbar img{
     background:none;
@@ -19,12 +21,12 @@
 }
 .navbar li{
 align-items: center;
-background-color: #AED9E0;
+background-color: #4F3933;
 display: inline;
 
 }
 ul li input{
-    background: #D2EAEE;
+    background: #c0c0c0;
     border:2px solid #504e4e;
     margin-right:10px;
     border-radius: 10px;
@@ -32,18 +34,16 @@ ul li input{
     outline:none;
 }
 ul li button{
-border:0.16em solid #FFFFFF;
-background: #c0c0aa;
-background: linear-gradient(to right, #c0c0aa, #06949e);
+border:2PX solid #725140;
+background: #725140;
 height:35px;
-width:90px;
+width:80px;
 color:black;
 border-radius: 15px;
 box-sizing: border-box;
 text-decoration:none;
 text-transform:uppercase;
-font-family:'Roboto',sans-serif;
-font-weight:400;
+font-weight:600;
 color:#FFFFFF;
 text-align:center;
 transition: all 0.15s;
@@ -58,8 +58,18 @@ border-color:#DDDDDD;
     margin-right: calc(50vw - 280px);
     margin-left: 30px;
     cursor: pointer;
-    border:2px solid #AED9E0;
+}
+.favorite img{
+    box-shadow: none;
 }
 .favorite:hover{
-border-bottom:2px solid #1c2cb9;
+border-bottom:5px solid #a5680c;
+}
+
+@media only screen and (min-width: 600px){
+.ul li button{
+height:35px;
+width:90px;
+font-size: 20px;
+}
 }
