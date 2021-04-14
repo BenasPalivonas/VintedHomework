@@ -15,7 +15,7 @@ const App = () => {
     }
     const addFavorites = (newFavorite) => {
         setFavorites((prevFavorites) => {
-            sessionStorage.setItem('favoriteItems', JSON.stringify([...new Set([...prevFavorites, newFavorite])]));
+            localStorage.setItem('favoriteItems', JSON.stringify([...new Set([...prevFavorites, newFavorite])]));
             return [...new Set([...prevFavorites, newFavorite])];
         })
     }
@@ -24,12 +24,12 @@ const App = () => {
             const newArray = prevFavorites.filter((item) => {
                 return item !== deleteFavorite;
             })
-            sessionStorage.setItem('favoriteItems', JSON.stringify(newArray));
+            localStorage.setItem('favoriteItems', JSON.stringify(newArray));
             return newArray;
         })
     }
     useEffect(() => {
-        const favs = JSON.parse(sessionStorage.getItem('favoriteItems'))
+        const favs = JSON.parse(localStorage.getItem('favoriteItems'))
         setFavorites(favs);
     }, [])
     return (<div>
