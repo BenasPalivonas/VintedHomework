@@ -30,7 +30,9 @@ const App = () => {
     }
     useEffect(() => {
         const favs = JSON.parse(localStorage.getItem('favoriteItems'))
-        setFavorites(favs);
+        if (favs !== null) {
+            setFavorites(favs);
+        }
     }, [])
     return (<div>
         <Navbar favorites={favorites} onChange={onChange} deleteFavorite={deleteFavorite} addFavorites={addFavorites} />

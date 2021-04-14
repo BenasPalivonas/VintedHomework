@@ -45,11 +45,11 @@ const Items = ({ tag, date, addFavorites, deleteFavorite, favorites }) => {
             <div className="grid">
                 {pictures.map((item, index) => {
                     if (pictures.length === index + 1) {
-                        return <div style={{ width: '400px', height: '400px' }} onClick={() => openModal(item)} ref={lastBookElementRef} ><Card addFavorites={addFavorites} item={item} />
+                        return <div key={item.id + index} style={{ width: '400px', height: '400px' }} onClick={() => openModal(item)} ref={lastBookElementRef} ><Card addFavorites={addFavorites} item={item} />
                         </div>
                     }
                     else
-                        return <div style={{ width: '400px', height: '400px' }} onClick={() => openModal(item)}><Card addFavorites={addFavorites} item={item} /></div>
+                        return <div key={item.id + index} style={{ width: '400px', height: '400px' }} onClick={() => openModal(item)}><Card addFavorites={addFavorites} item={item} /></div>
 
                 })}
             </div>
