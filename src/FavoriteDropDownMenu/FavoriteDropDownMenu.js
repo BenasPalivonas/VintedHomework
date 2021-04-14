@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './FavoriteDropDownMenu.css';
-import deletePng from './delete.png';
-import Modal from './Modal.js';
+import deletePng from '../images/delete.png';
+import Modal from '../Modal/Modal.js';
 const FavoriteDropDownMenu = ({ favorites, deleteFavorite, modalState, addFavorites }) => {
     const [modalItem, setModalItem] = useState();
     const [showModal, setShowModal] = useState(false);

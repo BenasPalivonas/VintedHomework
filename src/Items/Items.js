@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useRef, useCallback } from 'react';
 import './items.css'
 import UseSearchPhotos from './UseSearchPhotos';
-import Card from './Card';
-import Modal from './Modal';
+import Card from '../Card/Card';
+import Modal from '../Modal/Modal';
 const Items = ({ tag, date, addFavorites, deleteFavorite, favorites }) => {
     const [pageNumber, setPageNumber] = useState(1);
     const [showModal, setShowModal] = useState(false);

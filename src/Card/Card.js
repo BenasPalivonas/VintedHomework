@@ -1,4 +1,4 @@
-import Overlay from './Overlay';
+import Overlay from '../Overlay/Overlay';
 import React, { useState } from 'react'
 const Card = ({ item, addFavorites }) => {
     const [showOverlay, setShowOverlay] = useState(false);

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import './navbar.css'
-import favorite from './favorite.png'
-import FavoriteDropDownMenu from './FavoriteDropDownMenu'
+import favorite from '../images/favorite.png'
+import FavoriteDropDownMenu from '../FavoriteDropDownMenu/FavoriteDropDownMenu'
 const Navbar = ({ onChange, favorites, deleteFavorite, addFavorites }) => {
     const [input, setInput] = useState('');
     const [menuOpen, setMenuOpen] = useState(false);
@@ -9,7 +9,7 @@ const Navbar = ({ onChange, favorites, deleteFavorite, addFavorites }) => {
     const dropDownRef = useRef(null);
     useEffect(() => {
         const pageClickEvent = (e) => {
-            if (dropDownRef.current !== null && !dropDownRef.current.contains(e.target) && modalOpen == false) {
+            if (dropDownRef.current !== null && !dropDownRef.current.contains(e.target) && modalOpen === false) {
                 setMenuOpen(!menuOpen);
             }
         }

@@ -24,7 +24,7 @@ const Modal = ({ closeModal, item, favorites, deleteFavorite, addFavorites }) =>
             return 0;
         })
         setFavorited(a);
-    }, [item]);
+    }, [item, favorites]);
     return (
         <div className="modal" onClick={closeModal}>
             <div className="modalContent" onClick={e => e.stopPropagation()}>

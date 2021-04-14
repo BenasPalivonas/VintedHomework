@@ -1,8 +1,8 @@
-import Items from './Items.js';
+import Items from './Items/Items.js';
 import React, { useState, useEffect } from 'react';
-import Navbar from './Navbar.js';
+import Navbar from './Navbar/Navbar.js';
 import './App.css';
-import DatePicker from './DatePicker';
+import DatePicker from './DatePicker/DatePicker';
 const App = () => {
     const [tag, setTag] = useState("");
     const [date, setDate] = useState(1);
